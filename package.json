@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint src/** --ext .ts,.tsx",
+    "prettier": "prettier --write './**/*.{ts,html,scss}'"
   },
   "dependencies": {
     "next": "10.0.7",
