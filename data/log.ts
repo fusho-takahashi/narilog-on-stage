@@ -1,11 +1,11 @@
-import { songs } from './songs';
+import { Song } from './songs';
 
 export interface StageLog {
   id: number;
   date: string;
   section: number;
   place: string;
-  songs: songs[];
+  songs: Song[];
 }
 
 export const stageLogs: StageLog[] = [

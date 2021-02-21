@@ -1,4 +1,4 @@
-export type songs =
+export type Song =
   | '赤いマフラー'
   | '片耳ラブソング'
   | 'キス距離'

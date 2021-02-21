@@ -7,9 +7,9 @@ export default function StageData({ stageData }: { stageData: StageLog }): JSX.E
   return (
     <>
       <Head>{`${stageData.date}-${stageData.section}`}</Head>
-      <header>
-        {stageData.date} {stageData.section}部 @{stageData.place}
-      </header>
+      <h1>
+        {stageData.date} {stageData.section}部
+      </h1>
       <main>
         <ul>
           {stageData.songs.map((song) => (
