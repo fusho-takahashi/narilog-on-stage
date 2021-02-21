@@ -17,7 +17,7 @@ export default function Home({
         <title>narilog on stage</title>
       </Head>
       <h1>narilog on stage</h1>
-      <p>since 2020-02-14</p>
+      <p>since 2021-02-14</p>
       <section>
         <h2>Summary</h2>
         <ul>
