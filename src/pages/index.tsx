@@ -30,7 +30,7 @@ export default function Home({
         </ul>
       </section>
       <section>
-        <h2>Stage</h2>
+        <h2>Stages</h2>
         <ul>
           {allStages.map(({ id, date, section }) => (
             <li key={id}>
