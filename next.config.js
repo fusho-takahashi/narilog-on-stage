@@ -1,5 +1,5 @@
 module.exports = {
-  distDir: 'build',
+  distDir: '.next',
   reactStrictMode: true,
   poweredByHeader: false,
 };
