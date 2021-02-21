@@ -30,7 +30,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }: { params: { id: string } }) => {
-  const stageData = getStageData(parseInt(params.id, 10));
+  const stageData = getStageData(params.id);
   return {
     props: {
       stageData,

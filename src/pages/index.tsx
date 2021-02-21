@@ -33,8 +33,8 @@ export default function Home({
         <h2>Stage</h2>
         <ul>
           {allStages.map(({ id, date, section }) => (
-            <li key={date}>
-              <Link href={`/stages/${id.toString()}`}>
+            <li key={id}>
+              <Link href={`/stages/${id}`}>
                 <a>
                   {date} {section}部
                 </a>
@@ -48,7 +48,7 @@ export default function Home({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allStages: { id: number; date: string; section: number }[] = getSortedStages();
+  const allStages: { id: string; date: string; section: number }[] = getSortedStages();
   const performedCountSummary: { song: Song; count: number }[] = getPerformedCount();
   return {
     props: {

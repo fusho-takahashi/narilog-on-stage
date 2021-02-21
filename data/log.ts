@@ -1,7 +1,7 @@
 import { Song } from './songs';
 
 export interface StageLog {
-  id: number;
+  id: string;
   date: string;
   section: number;
   place: string;
@@ -10,28 +10,28 @@ export interface StageLog {
 
 export const stageLogs: StageLog[] = [
   {
-    id: 0,
+    id: '2021-02-14-2',
     date: '2021-02-14',
     section: 2,
     place: '秋葉原アイドルステージ',
     songs: ['チョコレートパフェ', 'キス距離', 'ねこカブリーナ', '赤いマフラー', 'さくらシンデレラ'],
   },
   {
-    id: 1,
+    id: '2021-02-15-1',
     date: '2021-02-15',
     section: 1,
     place: '秋葉原アイドルステージ',
     songs: ['PROTOSTAR', 'White Magic Love', '夏恋クレシェンド', 'ねこカブリーナ', '名前のない花'],
   },
   {
-    id: 2,
+    id: '2021-02-17-1',
     date: '2021-02-17',
     section: 1,
     place: '秋葉原アイドルステージ',
     songs: ['さくらシンデレラ', 'ねこカブリーナ', '粉雪ノスタルジア', '戦国桜絵巻'],
   },
   {
-    id: 3,
+    id: '2021-02-19-1',
     date: '2021-02-19',
     section: 1,
     place: '秋葉原アイドルステージ',
@@ -45,7 +45,7 @@ export const stageLogs: StageLog[] = [
     ],
   },
   {
-    id: 4,
+    id: '2021-02-20-1',
     date: '2021-02-20',
     section: 1,
     place: '秋葉原アイドルステージ',
