@@ -13,7 +13,7 @@ export default function StageData({ stageData }: { stageData: StageLog }): JSX.E
       <main>
         <ul>
           {stageData.songs.map((song) => (
-            <li key="song">{song}</li>
+            <li key={song}>{song}</li>
           ))}
         </ul>
       </main>
