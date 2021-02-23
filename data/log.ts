@@ -1,11 +1,11 @@
-import { Song } from './songs';
+import { Song } from './songs'
 
 export interface StageLog {
-  id: string;
-  date: string;
-  section: number;
-  place: string;
-  songs: Song[];
+  id: string
+  date: string
+  section: number
+  place: string
+  songs: Song[]
 }
 
 export const stageLogs: StageLog[] = [
@@ -14,21 +14,38 @@ export const stageLogs: StageLog[] = [
     date: '2021-02-14',
     section: 2,
     place: '秋葉原アイドルステージ',
-    songs: ['チョコレートパフェ', 'キス距離', 'ねこカブリーナ', '赤いマフラー', 'さくらシンデレラ'],
+    songs: [
+      'チョコレートパフェ',
+      'キス距離',
+      'ねこカブリーナ',
+      '赤いマフラー',
+      'さくらシンデレラ',
+    ],
   },
   {
     id: '2021-02-15-1',
     date: '2021-02-15',
     section: 1,
     place: '秋葉原アイドルステージ',
-    songs: ['PROTOSTAR', 'White Magic Love', '夏恋クレシェンド', 'ねこカブリーナ', '名前のない花'],
+    songs: [
+      'PROTOSTAR',
+      'White Magic Love',
+      '夏恋クレシェンド',
+      'ねこカブリーナ',
+      '名前のない花',
+    ],
   },
   {
     id: '2021-02-17-1',
     date: '2021-02-17',
     section: 1,
     place: '秋葉原アイドルステージ',
-    songs: ['さくらシンデレラ', 'ねこカブリーナ', '粉雪ノスタルジア', '戦国桜絵巻'],
+    songs: [
+      'さくらシンデレラ',
+      'ねこカブリーナ',
+      '粉雪ノスタルジア',
+      '戦国桜絵巻',
+    ],
   },
   {
     id: '2021-02-19-1',
@@ -64,7 +81,12 @@ export const stageLogs: StageLog[] = [
     date: '2021-02-21',
     section: 2,
     place: '秋葉原アイドルステージ',
-    songs: ['キス距離', 'チョコレートパフェ', 'ねこカブリーナ', 'ほしがりガール'],
+    songs: [
+      'キス距離',
+      'チョコレートパフェ',
+      'ねこカブリーナ',
+      'ほしがりガール',
+    ],
   },
   {
     id: '2021-02-22-1',
@@ -93,4 +115,4 @@ export const stageLogs: StageLog[] = [
       '未来プロローグ',
     ],
   },
-];
+]

@@ -1,15 +1,15 @@
-import { GetStaticProps } from 'next';
-import Head from 'next/head';
-import Link from 'next/link';
-import { Song } from '../../data/songs';
-import { getPerformedCount, getSortedStages } from '../../lib/stageLogs';
+import { GetStaticProps } from 'next'
+import Head from 'next/head'
+import Link from 'next/link'
+import { Song } from '../../data/songs'
+import { getPerformedCount, getSortedStages } from '../../lib/stageLogs'
 
 export default function Home({
   allStages,
   performedCountSummary,
 }: {
-  allStages: { id: number; date: string; section: number }[];
-  performedCountSummary: { song: Song; count: number }[];
+  allStages: { id: number; date: string; section: number }[]
+  performedCountSummary: { song: Song; count: number }[]
 }): JSX.Element {
   return (
     <>
@@ -44,16 +44,23 @@ export default function Home({
         </ul>
       </section>
     </>
-  );
+  )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allStages: { id: string; date: string; section: number }[] = getSortedStages();
-  const performedCountSummary: { song: Song; count: number }[] = getPerformedCount();
+  const allStages: {
+    id: string
+    date: string
+    section: number
+  }[] = getSortedStages()
+  const performedCountSummary: {
+    song: Song
+    count: number
+  }[] = getPerformedCount()
   return {
     props: {
       allStages,
       performedCountSummary,
     },
-  };
-};
+  }
+}

@@ -32,4 +32,4 @@ export type Song =
   | 'Marvelous rain'
   | '新Marvelous rain'
   | '未来プロローグ'
-  | 'Ring 〜Holy land〜';
+  | 'Ring 〜Holy land〜'
