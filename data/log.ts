@@ -80,4 +80,17 @@ export const stageLogs: StageLog[] = [
       'チョコレートパフェ',
     ],
   },
+  {
+    id: '2021-02-23-1',
+    date: '2021-02-23',
+    section: 1,
+    place: '新宿アイドルステージ',
+    songs: [
+      'PROTOSTAR',
+      'ほしがりガール',
+      'White Magic Love',
+      '夏恋クレシェンド',
+      '未来プロローグ',
+    ],
+  },
 ];
