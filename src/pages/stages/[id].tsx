@@ -3,11 +3,7 @@ import Head from 'next/head'
 import { StageLog } from '../../../data/log'
 import { getAllStageIds, getStageData } from '../../../lib/stageLogs'
 
-export default function StageData({
-  stageData,
-}: {
-  stageData: StageLog
-}): JSX.Element {
+const StageData = ({ stageData }: { stageData: StageLog }): JSX.Element => {
   return (
     <>
       <Head>{`${stageData.date}-${stageData.section}`}</Head>
@@ -45,3 +41,5 @@ export const getStaticProps: GetStaticProps = async ({
     },
   }
 }
+
+export default StageData

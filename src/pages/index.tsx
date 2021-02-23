@@ -4,13 +4,13 @@ import Link from 'next/link'
 import { Song } from '../../data/songs'
 import { getPerformedCount, getSortedStages } from '../../lib/stageLogs'
 
-export default function Home({
+const Home = ({
   allStages,
   performedCountSummary,
 }: {
   allStages: { id: number; date: string; section: number }[]
   performedCountSummary: { song: Song; count: number }[]
-}): JSX.Element {
+}): JSX.Element => {
   return (
     <>
       <Head>
@@ -64,3 +64,5 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   }
 }
+
+export default Home
