@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { Song } from '../../data/songs'
 import { getPerformedCount, getSortedStages } from '../../lib/stageLogs'
+import HeroHeader from '../components/hero-header'
 
 const Home = ({
   allStages,
@@ -16,8 +17,7 @@ const Home = ({
       <Head>
         <title>narilog on stage</title>
       </Head>
-      <h1>narilog on stage</h1>
-      <p>since 2021-02-14</p>
+      <HeroHeader />
       <section>
         <h2>Summary</h2>
         <ul>
