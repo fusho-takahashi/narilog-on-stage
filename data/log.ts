@@ -1,11 +1,11 @@
-import { Song } from './songs'
+import { Song, SpecialSong } from './songs'
 
 export interface StageLog {
   id: string
   date: string
   section: number
   place: string
-  songs: Song[]
+  songs: (Song | SpecialSong)[]
 }
 
 export const stageLogs: StageLog[] = [
@@ -113,6 +113,19 @@ export const stageLogs: StageLog[] = [
       'White Magic Love',
       '夏恋クレシェンド',
       '未来プロローグ',
+    ],
+  },
+  {
+    id: '2021-02-26-1',
+    date: '2021-02-26',
+    section: 1,
+    place: '新宿アイドルステージ',
+    songs: [
+      'White Magic Love',
+      '粉雪ノスタルジア',
+      'ヒロイン（back number楽曲）',
+      'チョコレートパフェ',
+      'さくらシンデレラ',
     ],
   },
 ]

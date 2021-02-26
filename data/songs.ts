@@ -33,3 +33,5 @@ export type Song =
   | '新Marvelous rain'
   | '未来プロローグ'
   | 'Ring 〜Holy land〜'
+
+export type SpecialSong = 'ヒロイン（back number楽曲）'
