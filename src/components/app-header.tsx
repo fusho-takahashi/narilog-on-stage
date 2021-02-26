@@ -1,6 +1,6 @@
-import styles from '../../styles/HeroHeader.module.scss'
+import styles from '../../styles/AppHeader.module.scss'
 
-const HeroHeader = (): JSX.Element => {
+const AppHeader = (): JSX.Element => {
   return (
     <header className={styles['hero-header']}>
       <div>
@@ -11,4 +11,4 @@ const HeroHeader = (): JSX.Element => {
   )
 }
 
-export default HeroHeader
+export default AppHeader
