@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import { Song } from '../../data/songs'
+import { Song, SpecialSong } from '../../data/songs'
 import { getPerformedCount, getSortedStages } from '../../lib/stageLogs'
 
 const Home = ({
@@ -54,7 +54,7 @@ export const getStaticProps: GetStaticProps = async () => {
     section: number
   }[] = getSortedStages()
   const performedCountSummary: {
-    song: Song
+    song: Song | SpecialSong
     count: number
   }[] = getPerformedCount()
   return {

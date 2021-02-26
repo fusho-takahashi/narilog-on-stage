@@ -1,5 +1,5 @@
 import { StageLog, stageLogs } from '../data/log'
-import { Song } from '../data/songs'
+import { Song, SpecialSong } from '../data/songs'
 
 export function getSortedStages(): {
   id: string
@@ -24,8 +24,11 @@ export function getStageData(id: string): StageLog {
   }
 }
 
-export function getPerformedCount(): { song: Song; count: number }[] {
-  const performedCount: { song: Song; count: number }[] = []
+export function getPerformedCount(): {
+  song: Song | SpecialSong
+  count: number
+}[] {
+  const performedCount: { song: Song | SpecialSong; count: number }[] = []
 
   stageLogs.forEach((log) => {
     log.songs.forEach((song) => {
