@@ -5,11 +5,13 @@ export function getSortedStages(): {
   id: string
   date: string
   section: number
+  place: string
 }[] {
   return stageLogs.map((log) => ({
     id: log.id,
     date: log.date,
     section: log.section,
+    place: log.place,
   }))
 }
 

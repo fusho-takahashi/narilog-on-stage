@@ -8,7 +8,7 @@ const Home = ({
   allStages,
   performedCountSummary,
 }: {
-  allStages: { id: number; date: string; section: number }[]
+  allStages: { id: number; date: string; section: number; place: string }[]
   performedCountSummary: { song: Song; count: number }[]
 }): JSX.Element => {
   return (
@@ -30,13 +30,13 @@ const Home = ({
         </ul>
       </section>
       <section>
-        <h2>Stages</h2>
+        <h2>List of stages</h2>
         <ul>
-          {allStages.map(({ id, date, section }) => (
+          {allStages.map(({ id, date, section, place }) => (
             <li key={id}>
               <Link href={`/stages/${id}`}>
                 <a>
-                  {date} {section}部
+                  {date} {section}部 @{place}
                 </a>
               </Link>
             </li>
@@ -52,6 +52,7 @@ export const getStaticProps: GetStaticProps = async () => {
     id: string
     date: string
     section: number
+    place: string
   }[] = getSortedStages()
   const performedCountSummary: {
     song: Song | SpecialSong
