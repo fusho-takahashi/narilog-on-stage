@@ -4,13 +4,12 @@ import Link from 'next/link'
 import { Song, SpecialSong } from '../../data/songs'
 import { getPerformedCount, getSortedStages } from '../../lib/stageLogs'
 
-const Home = ({
-  allStages,
-  performedCountSummary,
-}: {
+interface HomePageProps {
   allStages: { id: number; date: string }[]
   performedCountSummary: { song: Song; count: number }[]
-}): JSX.Element => {
+}
+
+const Home = (props: HomePageProps) => {
   return (
     <>
       <Head>
@@ -21,7 +20,7 @@ const Home = ({
       <section>
         <h2>Summary</h2>
         <ul>
-          {performedCountSummary.map(({ song, count }) => (
+          {props.performedCountSummary.map(({ song, count }) => (
             <li key={song}>
               <span>{count}回:</span>
               <span> {song}</span>
@@ -32,7 +31,7 @@ const Home = ({
       <section>
         <h2>List of stages</h2>
         <ul>
-          {allStages.map(({ id, date }) => (
+          {props.allStages.map(({ id, date }) => (
             <li key={id}>
               <Link href={`/stages/${id}`}>
                 <a>{date}</a>

@@ -3,20 +3,20 @@ import Head from 'next/head'
 import { IrregularStageLog, RegularStageLog } from '../../../data/log'
 import { getAllStageIds, getStageData } from '../../../lib/stageLogs'
 
-const StageData = ({
-  stageData,
-}: {
+interface StageDataProps {
   stageData: RegularStageLog | IrregularStageLog
-}): JSX.Element => {
+}
+
+const StageData = (props: StageDataProps) => {
   return (
     <>
       <Head>
-        <title>{stageData.date}</title>
+        <title>{props.stageData.date}</title>
       </Head>
-      <h1>{stageData.date}</h1>
+      <h1>{props.stageData.date}</h1>
       <main>
         <ul>
-          {stageData.songs.map((song) => (
+          {props.stageData.songs.map((song) => (
             <li key={song}>{song}</li>
           ))}
         </ul>
