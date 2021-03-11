@@ -1,17 +1,29 @@
 import { Song, SpecialSong } from './songs'
 
-export interface StageLog {
+interface StageLog {
   id: string
   date: string
-  section: number
+  regular: boolean
   place: string
   songs: (Song | SpecialSong)[]
 }
 
-export const stageLogs: StageLog[] = [
+export interface RegularStageLog extends StageLog {
+  regular: true
+  section: number
+  place: '秋葉原アイドルステージ' | '新宿アイドルステージ'
+}
+
+export interface IrregularStageLog extends StageLog {
+  regular: false
+  live: string
+}
+
+export const stageLogs: (RegularStageLog | IrregularStageLog)[] = [
   {
     id: '2021-02-14-2',
     date: '2021-02-14',
+    regular: true,
     section: 2,
     place: '秋葉原アイドルステージ',
     songs: [
@@ -25,6 +37,7 @@ export const stageLogs: StageLog[] = [
   {
     id: '2021-02-15-1',
     date: '2021-02-15',
+    regular: true,
     section: 1,
     place: '秋葉原アイドルステージ',
     songs: [
@@ -38,6 +51,7 @@ export const stageLogs: StageLog[] = [
   {
     id: '2021-02-17-1',
     date: '2021-02-17',
+    regular: true,
     section: 1,
     place: '秋葉原アイドルステージ',
     songs: [
@@ -50,6 +64,7 @@ export const stageLogs: StageLog[] = [
   {
     id: '2021-02-19-1',
     date: '2021-02-19',
+    regular: true,
     section: 1,
     place: '秋葉原アイドルステージ',
     songs: [
@@ -64,6 +79,7 @@ export const stageLogs: StageLog[] = [
   {
     id: '2021-02-20-1',
     date: '2021-02-20',
+    regular: true,
     section: 1,
     place: '秋葉原アイドルステージ',
     songs: [
@@ -79,6 +95,7 @@ export const stageLogs: StageLog[] = [
   {
     id: '2021-02-21-2',
     date: '2021-02-21',
+    regular: true,
     section: 2,
     place: '秋葉原アイドルステージ',
     songs: [
@@ -91,6 +108,7 @@ export const stageLogs: StageLog[] = [
   {
     id: '2021-02-22-1',
     date: '2021-02-22',
+    regular: true,
     section: 1,
     place: '秋葉原アイドルステージ',
     songs: [
@@ -105,6 +123,7 @@ export const stageLogs: StageLog[] = [
   {
     id: '2021-02-23-1',
     date: '2021-02-23',
+    regular: true,
     section: 1,
     place: '新宿アイドルステージ',
     songs: [
@@ -118,6 +137,7 @@ export const stageLogs: StageLog[] = [
   {
     id: '2021-02-26-1',
     date: '2021-02-26',
+    regular: true,
     section: 1,
     place: '新宿アイドルステージ',
     songs: [
@@ -131,6 +151,7 @@ export const stageLogs: StageLog[] = [
   {
     id: '2021-02-27-1',
     date: '2021-02-27',
+    regular: true,
     section: 1,
     place: '新宿アイドルステージ',
     songs: [
@@ -144,6 +165,7 @@ export const stageLogs: StageLog[] = [
   {
     id: '2021-02-28-1',
     date: '2021-02-28',
+    regular: true,
     section: 1,
     place: '秋葉原アイドルステージ',
     songs: [

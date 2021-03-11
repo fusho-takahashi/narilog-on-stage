@@ -1,15 +1,19 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
-import { StageLog } from '../../../data/log'
+import { IrregularStageLog, RegularStageLog } from '../../../data/log'
 import { getAllStageIds, getStageData } from '../../../lib/stageLogs'
 
-const StageData = ({ stageData }: { stageData: StageLog }): JSX.Element => {
+const StageData = ({
+  stageData,
+}: {
+  stageData: RegularStageLog | IrregularStageLog
+}): JSX.Element => {
   return (
     <>
-      <Head>{`${stageData.date}-${stageData.section}`}</Head>
-      <h1>
-        {stageData.date} {stageData.section}部
-      </h1>
+      <Head>
+        <title>{stageData.date}</title>
+      </Head>
+      <h1>{stageData.date}</h1>
       <main>
         <ul>
           {stageData.songs.map((song) => (
