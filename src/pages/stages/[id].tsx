@@ -1,22 +1,22 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
-import { IrregularStageLog, RegularStageLog } from '../../../data/log'
-import { getAllStageIds, getStageData } from '../../../lib/stageLogs'
+import { EventLog } from '../../../data/log'
+import { getAllEventIds, getEventData } from '../../../lib/stageLogs'
 
 interface StageDataProps {
-  stageData: RegularStageLog | IrregularStageLog
+  eventData: EventLog
 }
 
 const StageData = (props: StageDataProps) => {
   return (
     <>
       <Head>
-        <title>{props.stageData.date}</title>
+        <title>{props.eventData.date + ' ' + props.eventData.name}</title>
       </Head>
-      <h1>{props.stageData.date}</h1>
+      <h1>{props.eventData.date + ' ' + props.eventData.name}</h1>
       <main>
         <ul>
-          {props.stageData.songs.map((song) => (
+          {props.eventData.songs.map((song) => (
             <li key={song}>{song}</li>
           ))}
         </ul>
@@ -26,22 +26,22 @@ const StageData = (props: StageDataProps) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllStageIds()
+  const paths = getAllEventIds()
   return {
     paths,
     fallback: false,
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({
+export const getStaticProps: GetStaticProps<StageDataProps> = async ({
   params,
 }: {
   params: { id: string }
 }) => {
-  const stageData = getStageData(params.id)
+  const eventData = getEventData(params.id)
   return {
     props: {
-      stageData,
+      eventData,
     },
   }
 }

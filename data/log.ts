@@ -1,30 +1,27 @@
 import { Song, SpecialSong } from './songs'
 
-interface StageLog {
+export interface EventLog {
   id: string
   date: string
-  regular: boolean
+  type: Event
+  name: string
   place: string
-  songs: (Song | SpecialSong)[]
+  songs?: (Song | SpecialSong)[]
 }
 
-export interface RegularStageLog extends StageLog {
-  regular: true
-  section: number
-  place: '秋葉原アイドルステージ' | '新宿アイドルステージ'
-}
+type Event =
+  | '劇場公演'
+  | '外部ライブ'
+  | 'リリースイベント'
+  | 'ファンミーティング'
+  | 'トークポート'
 
-export interface IrregularStageLog extends StageLog {
-  regular: false
-  live: string
-}
-
-export const stageLogs: (RegularStageLog | IrregularStageLog)[] = [
+export const stageLogs: EventLog[] = [
   {
     id: '2021-02-14-2',
     date: '2021-02-14',
-    regular: true,
-    section: 2,
+    type: '劇場公演',
+    name: '劇場LIVE【2部】',
     place: '秋葉原アイドルステージ',
     songs: [
       'チョコレートパフェ',
@@ -37,8 +34,8 @@ export const stageLogs: (RegularStageLog | IrregularStageLog)[] = [
   {
     id: '2021-02-15-1',
     date: '2021-02-15',
-    regular: true,
-    section: 1,
+    type: '劇場公演',
+    name: '劇場LIVE【1部】〜西野蓮お誕生日〜',
     place: '秋葉原アイドルステージ',
     songs: [
       'PROTOSTAR',
@@ -51,8 +48,8 @@ export const stageLogs: (RegularStageLog | IrregularStageLog)[] = [
   {
     id: '2021-02-17-1',
     date: '2021-02-17',
-    regular: true,
-    section: 1,
+    type: '劇場公演',
+    name: '劇場LIVE【1部】',
     place: '秋葉原アイドルステージ',
     songs: [
       'さくらシンデレラ',
@@ -64,8 +61,8 @@ export const stageLogs: (RegularStageLog | IrregularStageLog)[] = [
   {
     id: '2021-02-19-1',
     date: '2021-02-19',
-    regular: true,
-    section: 1,
+    type: '劇場公演',
+    name: '無観客生LIVE配信【1部】',
     place: '秋葉原アイドルステージ',
     songs: [
       'ぐるぐるワンワン',
@@ -77,10 +74,10 @@ export const stageLogs: (RegularStageLog | IrregularStageLog)[] = [
     ],
   },
   {
-    id: '2021-02-20-1',
+    id: '2021-02-20-birthday-live',
     date: '2021-02-20',
-    regular: true,
-    section: 1,
+    type: '劇場公演',
+    name: '西野蓮ミニ生誕祭',
     place: '秋葉原アイドルステージ',
     songs: [
       'ハロウィンモンスター',
@@ -95,8 +92,8 @@ export const stageLogs: (RegularStageLog | IrregularStageLog)[] = [
   {
     id: '2021-02-21-2',
     date: '2021-02-21',
-    regular: true,
-    section: 2,
+    type: '劇場公演',
+    name: '劇場LIVE【2部】',
     place: '秋葉原アイドルステージ',
     songs: [
       'キス距離',
@@ -108,8 +105,8 @@ export const stageLogs: (RegularStageLog | IrregularStageLog)[] = [
   {
     id: '2021-02-22-1',
     date: '2021-02-22',
-    regular: true,
-    section: 1,
+    type: '劇場公演',
+    name: '無観客生LIVE配信【1部】',
     place: '秋葉原アイドルステージ',
     songs: [
       'デラスキ',
@@ -123,8 +120,8 @@ export const stageLogs: (RegularStageLog | IrregularStageLog)[] = [
   {
     id: '2021-02-23-1',
     date: '2021-02-23',
-    regular: true,
-    section: 1,
+    type: '劇場公演',
+    name: '劇場LIVE【1部】',
     place: '新宿アイドルステージ',
     songs: [
       'PROTOSTAR',
@@ -137,8 +134,8 @@ export const stageLogs: (RegularStageLog | IrregularStageLog)[] = [
   {
     id: '2021-02-26-1',
     date: '2021-02-26',
-    regular: true,
-    section: 1,
+    type: '劇場公演',
+    name: '無観客生LIVE配信【1部】',
     place: '新宿アイドルステージ',
     songs: [
       'White Magic Love',
@@ -151,8 +148,8 @@ export const stageLogs: (RegularStageLog | IrregularStageLog)[] = [
   {
     id: '2021-02-27-1',
     date: '2021-02-27',
-    regular: true,
-    section: 1,
+    type: '劇場公演',
+    name: '劇場LIVE【1部】',
     place: '新宿アイドルステージ',
     songs: [
       'さくらシンデレラ',
@@ -165,8 +162,8 @@ export const stageLogs: (RegularStageLog | IrregularStageLog)[] = [
   {
     id: '2021-02-28-1',
     date: '2021-02-28',
-    regular: true,
-    section: 1,
+    type: '劇場公演',
+    name: '劇場LIVE【1部】',
     place: '秋葉原アイドルステージ',
     songs: [
       'キス距離',
@@ -180,16 +177,16 @@ export const stageLogs: (RegularStageLog | IrregularStageLog)[] = [
   {
     id: '2021-03-01-Spring-Typhoon-Festival',
     date: '2021-03-01',
-    regular: false,
-    live: 'Sprint Typhoon Festival',
+    type: '外部ライブ',
+    name: 'Sprint Typhoon Festival',
     place: 'TSUTAYA O-EAST',
     songs: ['大好きよ 〜ハマコイ〜', 'ねこカブリーナ', 'ほしがりガール'],
   },
   {
     id: '2021-03-03-CINDERELLA-STORY',
     date: '2021-03-03',
-    regular: false,
-    live: 'CINDERELLA-STORY',
+    type: '外部ライブ',
+    name: 'CINDERELLA-STORY',
     place: '新宿アイドルステージ',
     songs: [
       'チョコレートパフェ',
@@ -199,10 +196,10 @@ export const stageLogs: (RegularStageLog | IrregularStageLog)[] = [
     ],
   },
   {
-    id: '2021-03-05-1',
+    id: '2021-03-05-SHOWROOM',
     date: '2021-03-05',
-    regular: true,
-    section: 1,
+    type: '劇場公演',
+    name: 'SHOWROOM配信',
     place: '新宿アイドルステージ',
     songs: [
       'キス距離',
@@ -215,8 +212,8 @@ export const stageLogs: (RegularStageLog | IrregularStageLog)[] = [
   {
     id: '2021-03-06-1',
     date: '2021-03-06',
-    regular: true,
-    section: 1,
+    type: '劇場公演',
+    name: '劇場LIVE【1部】',
     place: '秋葉原アイドルステージ',
     songs: [
       'PROTOSTAR',
@@ -228,8 +225,8 @@ export const stageLogs: (RegularStageLog | IrregularStageLog)[] = [
   {
     id: '2021-03-07-2',
     date: '2021-03-07',
-    regular: true,
-    section: 2,
+    type: '劇場公演',
+    name: '劇場LIVE【2部】',
     place: '秋葉原アイドルステージ',
     songs: [
       '名前のない花',
@@ -242,8 +239,8 @@ export const stageLogs: (RegularStageLog | IrregularStageLog)[] = [
   {
     id: '2021-03-09-1',
     date: '2021-03-09',
-    regular: true,
-    section: 1,
+    type: '劇場公演',
+    name: 'さくらシンデレラの日 ～ いつもありがとう。サンキュー公演 ～',
     place: '新宿アイドルステージ',
     songs: [
       'きらめきダイアリー',
@@ -257,8 +254,8 @@ export const stageLogs: (RegularStageLog | IrregularStageLog)[] = [
   {
     id: '2021-03-10-1',
     date: '2021-03-10',
-    regular: true,
-    section: 1,
+    type: '劇場公演',
+    name: '劇場LIVE【1部】',
     place: '秋葉原アイドルステージ',
     songs: [
       '赤いマフラー',
@@ -271,8 +268,8 @@ export const stageLogs: (RegularStageLog | IrregularStageLog)[] = [
   {
     id: '2021-03-12-1',
     date: '2021-03-12',
-    regular: true,
-    section: 1,
+    type: '劇場公演',
+    name: '劇場LIVE【1部】',
     place: '秋葉原アイドルステージ',
     songs: [
       'キス距離',
@@ -284,10 +281,18 @@ export const stageLogs: (RegularStageLog | IrregularStageLog)[] = [
     ],
   },
   {
+    id: '2021-03-13-release-event',
+    date: '2021-03-13',
+    type: 'リリースイベント',
+    name: '12th シングル リリースイベント',
+    place: '秋葉原アイドルステージ',
+    songs: ['PROTOSTAR'],
+  },
+  {
     id: '2021-03-13-2',
     date: '2021-03-13',
-    regular: true,
-    section: 2,
+    type: '劇場公演',
+    name: '劇場LIVE【2部】',
     place: '秋葉原アイドルステージ',
     songs: [
       '未来プロローグ',
@@ -298,10 +303,18 @@ export const stageLogs: (RegularStageLog | IrregularStageLog)[] = [
     ],
   },
   {
-    id: '2021-03-14-2',
+    id: '2021-03-14-release-event',
     date: '2021-03-14',
-    regular: true,
-    section: 2,
+    type: 'リリースイベント',
+    name: '12th シングル リリースイベント',
+    place: '秋葉原アイドルステージ',
+    songs: ['僕らのユートピア'],
+  },
+  {
+    id: '2021-03-14-1',
+    date: '2021-03-14',
+    type: '劇場公演',
+    name: '劇場LIVE【1部】',
     place: '秋葉原アイドルステージ',
     songs: [
       'White Magic Love',
@@ -313,26 +326,50 @@ export const stageLogs: (RegularStageLog | IrregularStageLog)[] = [
     ],
   },
   {
-    id: '2021-03-17-1',
+    id: '2021-03-17-release-event',
     date: '2021-03-17',
-    regular: true,
-    section: 1,
+    type: 'リリースイベント',
+    name: '12th シングル リリースイベント',
+    place: '秋葉原アイドルステージ',
+    songs: ['ねこカブリーナ'],
+  },
+  {
+    id: '2021-03-17-newcomer',
+    date: '2021-03-17',
+    type: '劇場公演',
+    name: 'ご新規様優待ミニLIVE',
     place: '秋葉原アイドルステージ',
     songs: ['さくらシンデレラ', '戦国桜絵巻', '夏恋クレシェンド'],
   },
   {
-    id: '2021-03-19-1',
+    id: '2021-03-19-release-event',
     date: '2021-03-19',
-    regular: true,
-    section: 1,
+    type: 'リリースイベント',
+    name: '12th シングル リリースイベント',
+    place: '秋葉原アイドルステージ',
+    songs: ['デラスキ'],
+  },
+  {
+    id: '2021-03-19-newcomer',
+    date: '2021-03-19',
+    type: '劇場公演',
+    name: 'ご新規様優待ミニLIVE',
     place: '秋葉原アイドルステージ',
     songs: ['赤いマフラー', 'ほしがりガール', 'ねこカブリーナ'],
   },
   {
-    id: '2021-03-20-1',
+    id: '2021-03-20-release-event',
     date: '2021-03-20',
-    regular: true,
-    section: 1,
+    type: 'リリースイベント',
+    name: '12th シングル リリースイベント',
+    place: '秋葉原アイドルステージ',
+    songs: ['ほしがりガール'],
+  },
+  {
+    id: '2021-03-20-newcomer',
+    date: '2021-03-20',
+    type: '劇場公演',
+    name: 'ご新規様優待ミニLIVE',
     place: '秋葉原アイドルステージ',
     songs: [
       'チョコレートパフェ',

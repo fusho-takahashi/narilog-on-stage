@@ -5,8 +5,8 @@ import { Song, SpecialSong } from '../../data/songs'
 import { getPerformedCount, getSortedStages } from '../../lib/stageLogs'
 
 interface HomePageProps {
-  allStages: { id: number; date: string }[]
-  performedCountSummary: { song: Song; count: number }[]
+  allStages: { id: string; date: string; name: string }[]
+  performedCountSummary: { song: Song | SpecialSong; count: number }[]
 }
 
 const Home = (props: HomePageProps) => {
@@ -31,10 +31,10 @@ const Home = (props: HomePageProps) => {
       <section>
         <h2>List of stages</h2>
         <ul>
-          {props.allStages.map(({ id, date }) => (
+          {props.allStages.map(({ id, date, name }) => (
             <li key={id}>
               <Link href={`/stages/${id}`}>
-                <a>{date}</a>
+                <a>{date + ' ' + name}</a>
               </Link>
             </li>
           ))}
@@ -44,10 +44,11 @@ const Home = (props: HomePageProps) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
   const allStages: {
     id: string
     date: string
+    name: string
   }[] = getSortedStages()
   const performedCountSummary: {
     song: Song | SpecialSong
