@@ -378,4 +378,12 @@ export const stageLogs: EventLog[] = [
       '赤いマフラー',
     ],
   },
+  {
+    id: '2021-03-21-release-event',
+    date: '2021-03-21',
+    type: 'リリースイベント',
+    name: '12th シングル リリースイベント',
+    place: '秋葉原アイドルステージ',
+    songs: ['新Marvelous rain', '赤いマフラー'],
+  },
 ]
