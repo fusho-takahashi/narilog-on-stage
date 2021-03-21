@@ -320,4 +320,25 @@ export const stageLogs: (RegularStageLog | IrregularStageLog)[] = [
     place: '秋葉原アイドルステージ',
     songs: ['さくらシンデレラ', '戦国桜絵巻', '夏恋クレシェンド'],
   },
+  {
+    id: '2021-03-19-1',
+    date: '2021-03-19',
+    regular: true,
+    section: 1,
+    place: '秋葉原アイドルステージ',
+    songs: ['赤いマフラー', 'ほしがりガール', 'ねこカブリーナ'],
+  },
+  {
+    id: '2021-03-20-1',
+    date: '2021-03-20',
+    regular: true,
+    section: 1,
+    place: '秋葉原アイドルステージ',
+    songs: [
+      'チョコレートパフェ',
+      'キス距離',
+      '大好きよ 〜ハマコイ〜',
+      '赤いマフラー',
+    ],
+  },
 ]
