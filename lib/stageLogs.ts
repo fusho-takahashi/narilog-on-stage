@@ -1,21 +1,23 @@
-import { IrregularStageLog, RegularStageLog, stageLogs } from '../data/log'
+import { EventLog, stageLogs } from '../data/log'
 import { Song, SpecialSong } from '../data/songs'
 
 export function getSortedStages(): {
   id: string
   date: string
+  name: string
 }[] {
   return stageLogs.map((log) => ({
     id: log.id,
     date: log.date,
+    name: log.name,
   }))
 }
 
-export function getAllStageIds(): { params: { id: string } }[] {
-  return stageLogs.map((log) => ({ params: { id: log.id.toString() } }))
+export function getAllEventIds(): { params: { id: string } }[] {
+  return stageLogs.map((log) => ({ params: { id: log.id } }))
 }
 
-export function getStageData(id: string): RegularStageLog | IrregularStageLog {
+export function getEventData(id: string): EventLog {
   const data = stageLogs.find((log) => log.id === id)
   if (data !== undefined) {
     return data
