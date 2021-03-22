@@ -386,4 +386,12 @@ export const stageLogs: EventLog[] = [
     place: '秋葉原アイドルステージ',
     songs: ['新Marvelous rain', '赤いマフラー'],
   },
+  {
+    id: '2021-03-22-Spring-Typhoon-Festival',
+    date: '2021-03-22',
+    type: '外部ライブ',
+    name: 'Sprint Typhoon Festival',
+    place: '新宿ReNY',
+    songs: ['ねこカブリーナ', '夏恋クレシェンド', '大好きよ 〜ハマコイ〜'],
+  },
 ]
