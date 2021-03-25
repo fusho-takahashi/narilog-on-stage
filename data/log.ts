@@ -394,4 +394,26 @@ export const stageLogs: EventLog[] = [
     place: '新宿ReNY',
     songs: ['ねこカブリーナ', '夏恋クレシェンド', '大好きよ 〜ハマコイ〜'],
   },
+  {
+    id: '2021-03-22-SHOWROOM',
+    date: '2021-03-22',
+    type: '劇場公演',
+    name: 'SHOWROOM配信',
+    place: '新宿アイドルステージ',
+    songs: [
+      'キス距離',
+      'PROTOSTAR',
+      '名前のない花',
+      'ねこカブリーナ',
+      'ほしがりガール',
+    ],
+  },
+  {
+    id: '2021-03-24-release-event',
+    date: '2021-03-24',
+    type: 'リリースイベント',
+    name: '12th シングル リリースイベント',
+    place: '秋葉原アイドルステージ',
+    songs: ['夏恋クレシェンド'],
+  },
 ]
