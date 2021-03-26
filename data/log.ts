@@ -416,4 +416,21 @@ export const stageLogs: EventLog[] = [
     place: '秋葉原アイドルステージ',
     songs: ['夏恋クレシェンド'],
   },
+  {
+    id: '2021-03-24-newcomer',
+    date: '2021-03-24',
+    type: '劇場公演',
+    name: 'ご新規様優待ミニLIVE',
+    place: '秋葉原アイドルステージ',
+    songs: ['ねこカブリーナ', 'PROTOSTAR', 'ほしがりガール', '赤いマフラー'],
+  },
+
+  {
+    id: '2021-03-26-release-event',
+    date: '2021-03-26',
+    type: 'リリースイベント',
+    name: '12th シングル リリースイベント',
+    place: '秋葉原アイドルステージ',
+    songs: ['未来プロローグ'],
+  },
 ]
