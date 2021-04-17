@@ -34,5 +34,6 @@ export type Song =
   | '未来プロローグ'
   | 'Ring 〜Holy land〜'
   | 'ピンキーリングに花飾り'
+  | '星のピアス'
 
 export type SpecialSong = 'ヒロイン（back number楽曲）'
