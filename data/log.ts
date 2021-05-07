@@ -704,4 +704,12 @@ export const stageLogs: EventLog[] = [
     place: '秋葉原アイドルステージ',
     songs: ['戦国桜絵巻'],
   },
+  {
+    id: '2021-04-18-release-event',
+    date: '2021-04-18',
+    type: 'リリースイベント',
+    name: '12th シングル リリースイベント',
+    place: '秋葉原アイドルステージ',
+    songs: ['未来プロローグ'],
+  },
 ]
